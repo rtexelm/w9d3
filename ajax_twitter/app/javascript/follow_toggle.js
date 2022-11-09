@@ -5,17 +5,24 @@ export default class FollowToggle {
     // Your code here
     this.toggleButton = toggleButton;
     this.handleClick = this.handleClick.bind(this)
-    // console.log(this)
+
+    document.addEventListener("click", this.handleClick)
   }
 
 
   async handleClick(event) {
     event.preventDefault()
-    console.log(this.followState)
+    if(this.followState === "followed"){
+      this.unfollow();
+    } else {
+      this.follow();
+    }
+
   }
 
   async follow() {
     // Your code here
+    
   }
 
   async unfollow() {
